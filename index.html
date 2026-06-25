@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chotakel AI - Kelas Video Animasi AI</title>
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --accent-orange: #ea580c;
+            --text-light: #f8fafc;
+            --text-dark: #0f172a;
+            --bg-light: #f1f5f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header / Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #0f172a 100%);
+            color: var(--text-light);
+            padding: 100px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--accent-orange);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: -webkit-linear-gradient(45deg, #ffedd5, var(--accent-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            color: #cbd5e1;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-orange);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(234, 88, 12, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: #c2410c;
+            transform: translateY(-3px);
+        }
+
+        /* Container Umum */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary-blue);
+        }
+
+        /* Profil Section */
+        .profil {
+            background: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .profil p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #475569;
+        }
+
+        /* Fitur / Materi Grid */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: center;
+            border-top: 4px solid var(--primary-blue);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--accent-orange);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* Testimoni */
+        .testimoni-section {
+            background: linear-gradient(135deg, #0f172a, var(--primary-blue));
+            color: white;
+        }
+
+        .testimoni-section .section-title {
+            color: var(--accent-orange);
+        }
+
+        .testimoni-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-orange);
+        }
+
+        .testimoni-card p {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .testimoni-card h4 {
+            color: #fb923c;
+        }
+
+        /* Pembayaran / Order */
+        .order-section {
+            text-align: center;
+        }
+
+        .payment-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .payment-box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid #e2e8f0;
+        }
+
+        .payment-box h3 {
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+
+        .qris-placeholder {
+            width: 200px;
+            height: 200px;
+            background: #cbd5e1;
+            margin: 15px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-weight: bold;
+            border: 2px dashed #94a3b8;
+            border-radius: 8px;
+        }
+
+        .bank-details {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--accent-orange);
+            background: #fff7ed;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Kuasai Animasi AI Bersama Chotakel AI</h1>
+        <p>Ubah ide Anda menjadi karya video animasi profesional yang memukau. Pelajari rahasia meracik prompt visual yang akurat tanpa perlu keahlian editing video yang rumit.</p>
+        <a href="#order" class="btn-primary">Daftar Kelas Sekarang</a>
+    </header>
+
+    <!-- Profil Section -->
+    <section class="profil" id="profil">
+        <div class="container">
+            <h2 class="section-title">Apa itu Chotakel AI?</h2>
+            <p><strong>Chotakel AI</strong> adalah platform dan grup kelas belajar eksklusif yang berfokus pada pembuatan video animasi menggunakan kecerdasan buatan (AI). Kami memadukan standar profesional dengan teknologi terbaru untuk membantu Anda menghasilkan karya media kelas atas. Baik Anda seorang konten kreator, pendidik, atau profesional, kelas ini dirancang khusus untuk mempercepat alur kerja Anda dari konsep hingga hasil akhir.</p>
+        </div>
+    </section>
+
+    <!-- Mengapa Harus Ikut Kelas Ini -->
+    <section style="background-color: white;" id="manfaat">
+        <div class="container">
+            <h2 class="section-title">Mengapa Harus Join Kelas Ini?</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <h3>Tanpa Skill Editing Rumit</h3>
+                    <p>Tidak perlu menguasai software berat. Biarkan AI bekerja merender ide visual Anda secara otomatis dan instan.</p>
+                </div>
+                <div class="card">
+                    <h3>Hasil Setara Studio</h3>
+                    <p>Pelajari trik pencahayaan sinematik dan resolusi tingkat tinggi untuk video yang siap viral di platform seperti TikTok, YouTube, atau CapCut.</p>
+                </div>
+                <div class="card">
+                    <h3>Komunitas Aktif</h3>
+                    <p>Bergabunglah dengan grup belajar Chotakel. Dapatkan feedback langsung, panduan, dan networking dengan sesama pembuat karya AI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materi Kelas -->
+    <section class="container" id="materi">
+        <h2 class="section-title">Materi yang Akan Anda Pelajari</h2>
+        <div class="grid-cards">
+            <div class="card">
+                <h3>1. Penguasaan Prompt Visual</h3>
+                <p>Formula rahasia meracik deskripsi (prompt) scene-by-scene agar AI menghasilkan gambar yang akurat sesuai imajinasi Anda.</p>
+            </div>
+            <div class="card">
+                <h3>2. Estetika & Visual Style</h3>
+                <p>Eksplorasi pembuatan animasi dengan gaya visual modern seperti <strong>3D Karikatur</strong> dan teknik <strong>Stop-Motion</strong> berkualitas tinggi.</p>
+            </div>
+            <div class="card">
+                <h3>3. Motion & Generasi Video</h3>
+                <p>Mengubah gambar statis menjadi video bergerak dengan struktur pergerakan (motion) yang halus dan natural.</p>
+            </div>
+            <div class="card">
+                <h3>4. Voice Over & Audio Sinkronisasi</h3>
+                <p>Membuat dubbing suara (Voice Over) karakter yang fleksibel dan menempatkannya dengan pas ke dalam video animasi Anda.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni -->
+    <section class="testimoni-section">
+        <div class="container">
+            <h2 class="section-title">Apa Kata Alumni Chotakel?</h2>
+            <div class="grid-cards">
+                <div class="testimoni-card">
+                    <p>"Awalnya bingung gimana cara bikin animasi yang bagus. Setelah ikut kelas Chotakel AI, nyusun prompt jadi gampang banget dan hasilnya detail parah!"</p>
+                    <h4>- Reza, Konten Kreator</h4>
+                </div>
+                <div class="testimoni-card">
+                    <p>"Materi gaya 3D dan Stop-Motion-nya daging banget. Sekarang bisa bikin aset media sendiri tanpa harus langganan software mahal. Mantap Bima dan tim!"</p>
+                    <h4>- Dini, Pengajar</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pembayaran / Order -->
+    <section class="container order-section" id="order">
+        <h2 class="section-title">Amankan Kursi Anda Sekarang!</h2>
+        <p style="margin-bottom: 40px; font-size: 1.1rem;">Pilih metode pembayaran yang paling memudahkan untuk Anda.</p>
+        
+        <div class="payment-methods">
+            
+            <!-- Link.id -->
+            <div class="payment-box">
+                <h3>1. Checkout via Lynk.id</h3>
+                <p>Pembayaran otomatis, langsung dapat akses ke materi dan grup kelas.</p>
+                <br>
+                <!-- Ganti link dengan URL lynk.id Anda -->
+                <a href="https://lynk.id/USERNAME_ANDA" target="_blank" class="btn-primary" style="width: 100%;">Beli Lewat Lynk.id</a>
+            </div>
+
+            <!-- Transfer Bank -->
+            <div class="payment-box">
+                <h3>2. Transfer Bank Langsung</h3>
+                <p>Silakan transfer ke rekening di bawah ini, lalu konfirmasi via WhatsApp.</p>
+                <div class="bank-details">
+                    BCA: 1234567890<br>
+                    A/N: Nama Anda
+                </div>
+                <br>
+                <!-- Ganti nomor WA -->
+                <a href="https://wa.me/6281234567890?text=Halo%20Bima,%20saya%20sudah%20transfer%20untuk%20kelas%20Chotakel%20AI" target="_blank" class="btn-primary" style="width: 100%; background-color: #10b981; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);">Konfirmasi WhatsApp</a>
+            </div>
+
+            <!-- QRIS -->
+            <div class="payment-box">
+                <h3>3. Bayar Pakai QRIS</h3>
+                <p>Scan barcode di bawah ini menggunakan aplikasi M-Banking atau E-Wallet Anda (Ovo, Gopay, Dana).</p>
+                <!-- Ganti src dengan link gambar QRIS asli Anda -->
+                <div class="qris-placeholder">
+                    [Taruh Gambar QRIS Anda di Sini]<br>
+                    <img src="" alt="QRIS Chotakel AI" style="max-width: 100%; display: none;">
+                </div>
+                <p style="font-size: 0.9rem; color: #64748b;">*Setelah scan, harap screenshot bukti bayar dan kirim ke WhatsApp.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Chotakel AI. Hak Cipta Dilindungi.</p>
+    </footer>
+
+</body>
+</html>
